@@ -18,6 +18,8 @@ class UserRegistrationSerializer(RegisterSerializer):
             'email': self.validated_data.get('email', '')
         }
 
+    # everything from here on in this file is ONLY if you want to add a custom field upon user creation, if the field is already on base user you do not need this method
+
     def save(self, request):
         adapter = get_adapter()
         user = adapter.new_user(request)
