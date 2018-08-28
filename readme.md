@@ -43,10 +43,17 @@ AUTH_USER_MODEL = 'api.User'
 ```
 If you named your app or model something different point the value to your user model instead. 
 
+At this point you can initialize your database by running 
+```
+python manage.py makemigrations api #or your app name
+python manage.py makemigrations allauth #required for some backend user things
+python manage.py migrate
+```
+
 Now django knows to use our custom user model in place of its default user model. But the functionality should remain mostly the same since it inherits all properties of the default user. 
 
 If you want to see it in action create a django superuser from the command line, and register your custom user model with the admin panel in the apps admin.py file.
-You can then login to the admin interface and view your newly created superuser. It should have any extra fields you defined on your custom user model. Django is now using your custom use model in place of the default. 
+You can then login to the admin interface and view your newly created superuser. It should have any extra fields you defined on your custom user model. Django is now using your custom user model in place of the default. 
 
 At this point you can go ahead and create a basic serializer and viewset for your user model that exposes as much public information you want available about your users. 
 
