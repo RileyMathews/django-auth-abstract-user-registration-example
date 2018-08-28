@@ -81,7 +81,7 @@ If your user model is extending AbstractUser, its likely that you are defining t
 #### adding fields that are included in base user
 If all you want to do is add a field that is already on django's base user model (which can be found in the docs here: https://docs.djangoproject.com/en/2.1/ref/contrib/auth/), all you have to do is override the default serializer. 
 
-Start by creating a new serializer class using this repos api.serializers.user_registration_serializer.py as an example, you can ignore the save() method we have defined for now. 
+Start by creating a new serializer class using this repos api.serializers.user_registration_serializer.py as an example, you can ignore the save() method thats defined for now. 
 
 ```
 class UserRegistrationSerializer(RegisterSerializer):
